@@ -1,0 +1,32 @@
+ul#schedule li span {font-size:1.3em}
+ul#schedule li {margin-top:10px}
+ul#schedule {list-style: none}
+p.speaker img, p.exhibits img{float:left;margin-right:5px}
+p.speaker span.name,p.celebration span.time,span.time,span.name  {font-size: 1.2em; font-weight: bold}
+span.title {font-style: italic}
+.ui-link {color:black;}
+p.meal {margin-left: 20px}
+p.optiondescriptions {margin-left: 20px}
+p.createdby {font-size: .8em;color: grey}
+div.ui-header h1.ui-title {color:white;}
+div.ui-footer h4.ui-title {color:white;font-size: .8em}
+div.ui-footer h4.ui-title a.ui-link {color:white}
+div.ui-footer h4.ui-title a.ui-link:hover {color:black}
+.header-logo {
+    background: url("/images/vision2020southheader3.png") repeat scroll 0 0 / 152px 42px transparent;
+    display: inline-block;
+    height: 42px;
+    width: 152px;
+	margin:auto 0;}
+.logo-container, .main-image-container {text-align: center}   
+img.main-image {
+    display: block;
+    margin: -15px 0 -15px 0;
+    width: 100%;
+    padding: 0px;
+}
+div.welcome {padding:0px;}
+a:link#homelink, a:visited#homelink, a:active#homelink {color:white; text-decoration: none}
+div.ui-header {background-color: #ffffff;}
+h3#subject {text-align: center}
+p.eachday {padding-left: 20px}
