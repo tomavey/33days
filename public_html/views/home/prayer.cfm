@@ -1,5 +1,5 @@
 <h1>Community of Hope Prayer Guide 2014</h1> 
-<cfoutput>#linkto(text="Download the pdf", href="http://33days.us/files/Prayer Guide.pdf")#</cfoutput>		
+<cfoutput>#linkto(text="Download the pdf", href="http://33days.us/files/Prayer Guide.pdf", data_ajax="false")#</cfoutput>		
 <h2>for the GLORY OF GOD and the good of our families</h2>
 
 <p>And pray in the Spirit on all occasions with all kinds of prayers and requests. With this in mind, be alert and always keep on praying for all the Lord’s people. Pray also for me, that whenever I speak, words may be given me so that I will fearlessly make known the mystery of the gospel, for which I am an ambassador in chains. Pray that I may declare it fearlessly, as I should.
