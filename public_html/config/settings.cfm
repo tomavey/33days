@@ -29,4 +29,4 @@
 	<cfset set(functionName="select", labelPlacement="before", prependToLabel="<p>", append="</p>")>	
 	<cfset set(functionName="timeSelect", labelPlacement="before", prependToLabel="<p>", append="</p>")>
 
-	<cfset application.wheels.startdate = "2014-08-04">
+	<cfset application.wheels.startdate = "2014-08-10">
