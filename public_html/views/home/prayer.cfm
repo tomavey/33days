@@ -2,29 +2,25 @@
 <cfoutput>#linkto(text="Download the pdf", href="http://33days.us/files/Prayer Guide.pdf")#</cfoutput>		
 <h2>for the GLORY OF GOD and the good of our families</h2>
 
-<p>Now to him who is able to do immeasurably more than all we ask or imagine, according to his power that is at work within us, to him be glory in the church and in Christ Jesus throughout all generations, for ever and  ever! Amen.  
-Ephesians 3:20-21 </p>
-<p>&nbsp;</p>
-<p>Listen, I tell you a mystery: We will not all sleep, but we will all be changed- in a flash, in the twinkling of an eye, at the last trumpet. For the trumpet will sound, the dead will be raised    imperishable, and we will be changed. For the perishable must clothe itself with the imperishable, and the mortal with immortality. When the perishable has been clothed with the imperishable, and the mortal with immortality, then the saying that is written will come true: "Death has been swallowed up in victory."" </p>
-<p>"Where, O death, is your victory? Where, O death, is your sting?"" </p>  
-  
-<p>The sting of death is sin, and the power of sin is the law. But thanks be to God! He gives us the victory through our Lord Jesus Christ. Therefore, my dear brothers and sisters, stand firm. Let nothing move you. Always give yourselves fully to the work of the Lord, because you know that your labor in the Lord is not in vain. 1 Corinthians 15:51-58 
+<p>And pray in the Spirit on all occasions with all kinds of prayers and requests. With this in mind, be alert and always keep on praying for all the Lord’s people. Pray also for me, that whenever I speak, words may be given me so that I will fearlessly make known the mystery of the gospel, for which I am an ambassador in chains. Pray that I may declare it fearlessly, as I should.
+Ephesians 6:18-20 (NIV)
 </p>
 
 
-<h2>PRAYER GUIDE FOR MY HEART</h2> 
+<h2>PRAY AND PLANT MY FIELDS</h2> 
  
-<h3>ADORATION</h3> 
-<p class="heart">Praise God for who He is and what He's done.</p> 
- 
-<h3>CONFESSION</h3> 
-<p class="heart">Confess your sins and seek His forgiveness, cleansing, and restoration.</p> 
- 
-<h3>THANKSGIVING</h3>
-<p class="heart">Thank God for each blessing and each challenge.</p> 
- 
-<h3>SUPPLICATION</h3> 
-<p class="heart">Pray for you needs and the needs of others.</p> 
+<h3>Fields</h3> 
+<p class="space">&nbsp;</p>
+<p class="space">&nbsp;</p>
+<p class="space">&nbsp;</p>
+<p class="space">&nbsp;</p>
+<h3>Names</h3> 
+<p class="space">&nbsp;</p>
+<p class="space">&nbsp;</p>
+<p class="space">&nbsp;</p>
+<p class="space">&nbsp;</p>
+<p class="space">&nbsp;</p>
+<p class="heart">Matthew 13; Mark 4</p> 
  
 <h2>PRAYER GUIDE FOR MY WEEK</h2>
 <ul class="week">
@@ -50,7 +46,7 @@ Ephesians 3:20-21 </p>
 	<li>Day 7: For the men of our church to rise to their full potential as leaders in their homes, in their places of work, and in the church.</li> 
 	<li>Day 8: For the students in middle school and high school to become fully devoted followers of Jesus and to become  leaders today.</li> 
 	<li>Day 9: For Jordan and Amanda Damon in Haiti.</li> 
-	<li>Day 10: For the vision at Community of Hope to be fully resourced by generous and passion members of the Body.</li> 
+	<li>Day 10: For the vision at Community of Hope to be fully resourced by generous and passionate members of the Body.</li> 
 	<li>Day 11: For our hope in Jesus' return to never waver in the midst of the turbulence and uncertainty within our world and our country.</li> 
 	<li>Day 12: For Shonn and Lori Foy in Merritt Island, Florida.</li> 
 	<li>Day 13: For God's Spirit to fill our hearts to overflowing and to convict us of our  personal and corporate sin.</li> 
