@@ -59,11 +59,17 @@
 </cffunction>
 
 <cffunction name="getThisDay">
-	<cfset var loc=structNew()>
-	<cfset loc.startdate = application.wheels.startdate>
-	<cfset loc.thisDate = now()>
+<cfargument name="startdate" default='#application.wheels.startdate#'>
+<cfargument name="thisdate" default="#now()#">
+<cfset var loc=structNew()>
+		<cfset loc = arguments>
 		<cfset loc.thisDay = dateDiff("d",loc.startdate,loc.thisdate) + 1>
-	<cfreturn loc.thisDay>
+		<cfif dateCompare(loc.thisdate,loc.startdate) is -1>
+			<cfset loc.return = -1-abs(loc.thisDay)>
+		<cfelse>	
+			<cfset loc.return = loc.thisday>
+		</cfif>	
+	<cfreturn val(loc.return)>
 </cffunction>
 
 <cffunction name="isOffice">

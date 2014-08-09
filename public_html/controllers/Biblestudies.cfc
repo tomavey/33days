@@ -97,5 +97,10 @@
 			<cfset redirectTo(action="index")>
 		</cfif>
 	</cffunction>
+
+	<cffunction name="testgetThisDay">
+		<cfset test = getThisDay("2014-08-10","2014-08-09")>
+		<cfdump var="#test#"><cfabort>
+	</cffunction>
 	
 </cfcomponent>
