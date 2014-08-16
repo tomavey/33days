@@ -43,8 +43,6 @@
 
 </div>	
 
-
-
 </cfoutput>
 </body>
 </html>

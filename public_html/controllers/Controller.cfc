@@ -5,6 +5,32 @@
 --->
 <cfcomponent extends="Wheels">
 
+	<cffunction name="init">
+		<cfset filters(through="logpage")>
+	</cffunction>
+
+	<cffunction name="logpage">
+	<cfset var loc = structnew()>
+
+		<cfif isStruct(params)>
+			<cfif isDefined('params.key')>
+				<cfset params.kkey = params.key>
+			</cfif>
+			<cfset structAppend(loc,params)>
+		</cfif>
+
+		<cfif isStruct(cgi)>
+			<cfset structAppend(loc,cgi)>
+		</cfif>
+
+		<cfif structKeyExists(session,"auth")>
+			<cfset structAppend(loc,session.auth)>
+		</cfif>
+
+		<cfset logpage = model("log").create(loc)>
+
+	</cffunction>
+
 	<cffunction name="setReturn">
 		
 		<cfif not isDefined("params.ajax")>
