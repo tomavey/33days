@@ -34,3 +34,4 @@
 	<cfcol header="" text="#linkTo(text='Delete', action='delete', key=id, confirm='Are you sure?')#" />
 </cftable>
 
+<cfdump var="#cgi#">
