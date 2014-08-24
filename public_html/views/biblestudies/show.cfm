@@ -9,5 +9,9 @@
 				
 					<p id="content">#biblestudies.content#</p>
 
+					<h3>Weekly Assignment</h3>
+
+					<p id="content">#biblestudies.weeks.content#</p>
+
 </cfoutput>
 </div>
