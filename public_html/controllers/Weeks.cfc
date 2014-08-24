@@ -14,12 +14,12 @@
 	<cffunction name="show">
 
 		<!--- Find the record --->
-    	<cfset weeks = model("Weeks").findOne(where="week=#params.key#")>
+		<cfset weeks = model("Weeks").findByKey(params.key)>
     	
     	<!--- Check if the record exists --->
 	    <cfif NOT IsObject(weeks)>
 	        <cfset flashInsert(error="Weeks #params.key# was not found")>
-	        <cfset redirectTo(action="index")>
+	        <cfset redirectTo(route="adminweeks")>
 	    </cfif>
 
 	    <cfset renderPage(layout="/layout")>
@@ -36,12 +36,12 @@
 	<cffunction name="edit">
 	
 		<!--- Find the record --->
-    	<cfset weeks = model("Weeks").findByKey(params.key)>
+		<cfset weeks = model("Weeks").findByKey(params.key)>
     	
     	<!--- Check if the record exists --->
 	    <cfif NOT IsObject(weeks)>
 	        <cfset flashInsert(error="Weeks #params.key# was not found")>
-			<cfset redirectTo(action="index")>
+			<cfset redirectTo(route="adminweeks")>
 	    </cfif>
 
 		<cfset renderPage(layout="/layout_admin")>
@@ -55,7 +55,7 @@
 		<!--- Verify that the weeks creates successfully --->
 		<cfif weeks.save()>
 			<cfset flashInsert(success="The weeks was created successfully.")>
-            <cfset redirectTo(action="index")>
+            <cfset redirectTo(route="adminweeks")>
 		<!--- Otherwise --->
 		<cfelse>
 			<cfset flashInsert(error="There was an error creating the weeks.")>
@@ -65,12 +65,14 @@
 	
 	<!--- weeks/update --->
 	<cffunction name="update">
+
+		<!--- Find the record --->
 		<cfset weeks = model("Weeks").findByKey(params.key)>
 		
 		<!--- Verify that the weeks updates successfully --->
 		<cfif weeks.update(params.weeks)>
 			<cfset flashInsert(success="The weeks was updated successfully.")>	
-            <cfset redirectTo(action="index")>
+            <cfset redirectTo(route="adminweeks")>
 		<!--- Otherwise --->
 		<cfelse>
 			<cfset flashInsert(error="There was an error updating the weeks.")>
@@ -85,11 +87,11 @@
 		<!--- Verify that the weeks deletes successfully --->
 		<cfif weeks.delete()>
 			<cfset flashInsert(success="The weeks was deleted successfully.")>	
-            <cfset redirectTo(action="index")>
+            <cfset redirectTo(route="adminweeks")>
 		<!--- Otherwise --->
 		<cfelse>
 			<cfset flashInsert(error="There was an error deleting the weeks.")>
-			<cfset redirectTo(action="index")>
+			<cfset redirectTo(route="adminweeks")>
 		</cfif>
 	</cffunction>
 	

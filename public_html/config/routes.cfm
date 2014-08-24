@@ -8,9 +8,10 @@
 <cfset addRoute(name="guides", pattern="/guides/", controller="Biblestudies", action="list")>
 <cfset addRoute(name="guide", pattern="/guide/[key]", controller="Biblestudies", action="show")>
 <cfset addRoute(name="adminweeks", pattern="/adminweeks/", controller="Weeks", action="index")>
-<cfset addRoute(name="adminweeksnew", pattern="/adminguidesnew/", controller="Weeks", action="new")>
-<cfset addRoute(name="weeks", pattern="/weeks/", controller="Weeks", action="list")>
+<cfset addRoute(name="adminweeksnew", pattern="/adminweeksnew/", controller="Weeks", action="new")>
+<cfset addRoute(name="weeksindex", pattern="/weeksindex/", controller="Weeks", action="index")>
 <cfset addRoute(name="weekedit", pattern="/week/[key]/edit/", controller="Weeks", action="edit")>
+<cfset addRoute(name="weekupdate", pattern="/week/[key]/update/", controller="Weeks", action="update")>
 <cfset addRoute(name="week", pattern="/week/[key]", controller="Weeks", action="show")>
 <cfset addRoute(name="today", pattern="/today/", controller="Biblestudies", action="show")>
 <cfset addRoute(name="admin", pattern="/admin/", controller="Biblestudies", action="index")>
