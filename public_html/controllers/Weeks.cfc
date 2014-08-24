@@ -12,7 +12,7 @@
 	
 	<!--- weeks/show/key --->
 	<cffunction name="show">
-		
+
 		<!--- Find the record --->
     	<cfset weeks = model("Weeks").findOne(where="week=#params.key#")>
     	

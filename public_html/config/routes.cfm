@@ -10,6 +10,7 @@
 <cfset addRoute(name="adminweeks", pattern="/adminweeks/", controller="Weeks", action="index")>
 <cfset addRoute(name="adminweeksnew", pattern="/adminguidesnew/", controller="Weeks", action="new")>
 <cfset addRoute(name="weeks", pattern="/weeks/", controller="Weeks", action="list")>
+<cfset addRoute(name="weekedit", pattern="/week/[key]/edit/", controller="Weeks", action="edit")>
 <cfset addRoute(name="week", pattern="/week/[key]", controller="Weeks", action="show")>
 <cfset addRoute(name="today", pattern="/today/", controller="Biblestudies", action="show")>
 <cfset addRoute(name="admin", pattern="/admin/", controller="Biblestudies", action="index")>
