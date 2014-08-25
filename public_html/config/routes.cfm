@@ -15,4 +15,7 @@
 <cfset addRoute(name="week", pattern="/week/[key]", controller="Weeks", action="show")>
 <cfset addRoute(name="today", pattern="/today/", controller="Biblestudies", action="show")>
 <cfset addRoute(name="admin", pattern="/admin/", controller="Biblestudies", action="index")>
-<cfset addRoute(name="prayerguide", pattern="/prayerguide/", controller="Home", action="prayer")>
+<cfset addRoute(name="editprayerguide", pattern="/prayerguide/edit/", controller="pages", action="editprayer")>
+<cfset addRoute(name="prayerguide", pattern="/prayerguide/", controller="pages", action="prayer")>
+<cfset addRoute(name="editintroduction", pattern="/introduction/edit/", controller="pages", action="editintroduction")>
+<cfset addRoute(name="introduction", pattern="/introduction/", controller="pages", action="introduction")>

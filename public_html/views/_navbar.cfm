@@ -11,11 +11,11 @@
 <cfset navargstoday["data-prefetch"] = "true">
 
 		<ul>
-		<cfif isDefined("params.key") AND params.key NEQ 1>
+		<cfif isDefined("params.key") AND params.key NEQ 1 and params.action is "biblestudies">
 			<li>#linkTo(text="Back One Day", route="guide", key=params.key - 1, argumentCollection=navargsback, data_icon="arrow-l")#</li>
 		</cfif>
 			<li>#linkTo(text="Today's Study Guide", route="today", argumentCollection=navargstoday, data_icon="home")#</li>
-		<cfif isDefined("params.key") and params.key LTE 32>	
+		<cfif isDefined("params.key") and params.key LTE 32 and params.action is "biblestudies">	
 			<li>#linkTo(text="Forward One Day", route="guide", key=params.key + 1, argumentCollection=navargs, data_icon="arrow-r")#</li>
 		</cfif>	
 		</ul>

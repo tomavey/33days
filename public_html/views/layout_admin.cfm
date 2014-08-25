@@ -14,6 +14,8 @@
     <ul class="nav">
     <li>#linkTo(text="Guides", route="adminguides")#</li>
     <li>#linkTo(text="Weeks", route="adminweeks")#</li>
+    <li>#linkTo(text="Edit Prayer Guide", route="editprayerguide")#</li>
+    <li>#linkTo(text="Edit Introduction", route="editintroduction")#</li>
     </ul>
     </div>
     </div>

@@ -2,12 +2,12 @@
 	
 	<cffunction name="init">
 		<cfset filters(through="isOffice", only="index,create,update,delete,new")>
+		<cfset usesLayout("/layout_admin")>
 	</cffunction>
 	
 	<!--- weeks/index --->
 	<cffunction name="index">
 		<cfset weeks = model("Weeks").findAll()>
-		<cfset usesLayout("/layout_admin")>
 	</cffunction>
 	
 	<!--- weeks/show/key --->
