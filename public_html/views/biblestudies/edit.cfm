@@ -6,7 +6,7 @@
 <cfoutput>
 
 			
-			#errorMessagesFor("biblestudies")#
+			#errorMessagesFor("biblestudy")#
 	
 			#startFormTag(action="update", key=params.key)#
 		

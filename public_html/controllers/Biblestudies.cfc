@@ -6,12 +6,12 @@
 	
 	<!--- biblestudies/index --->
 	<cffunction name="index">
-		<cfset biblestudies = model("Biblestudies").findAll(include="Weeks", order="day")>
+		<cfset biblestudies = model("Biblestudy").findAll(include="Week", order="day")>
 		<cfset renderPage(layout="/layout_admin")>
 	</cffunction>
 	
 	<cffunction name="list">
-		<cfset biblestudies = model("Biblestudies").findAll(where="active='yes'", order="week,day", include="Weeks")>
+		<cfset biblestudies = model("Biblestudy").findAll(where="active='yes'", order="week,day", include="Week")>
 	</cffunction>
 
 	<!--- biblestudies/show/key --->
@@ -21,10 +21,10 @@
 		</cfif>
 		
 		<!--- Find the record --->
-    	<cfset biblestudies = model("Biblestudies").findOne(where="day=#params.key#", include="Weeks")>
+    	<cfset biblestudy = model("Biblestudy").findOne(where="day=#params.key#", include="Week")>
     	
     	<!--- Check if the record exists --->
-	    <cfif NOT IsObject(biblestudies)>
+	    <cfif NOT IsObject(biblestudy)>
 	        <cfset flashInsert(error="Biblestudies #params.key# was not found")>
 	        <cfset redirectTo(action="list")>
 	    </cfif>
@@ -33,7 +33,7 @@
 
 	<!--- biblestudies/new --->
 	<cffunction name="new">
-		<cfset biblestudies = model("Biblestudies").new()>
+		<cfset biblestudy = model("Biblestudy").new()>
 		<cfset renderPage(layout="/layout_admin")>
 	</cffunction>
 	
@@ -41,10 +41,10 @@
 	<cffunction name="edit">
 	
 		<!--- Find the record --->
-    	<cfset biblestudies = model("Biblestudies").findByKey(params.key)>
+    	<cfset biblestudy = model("Biblestudy").findByKey(params.key)>
     	
     	<!--- Check if the record exists --->
-	    <cfif NOT IsObject(biblestudies)>
+	    <cfif NOT IsObject(biblestudy)>
 	        <cfset flashInsert(error="Biblestudies #params.key# was not found")>
 			<cfset redirectTo(action="index")>
 	    </cfif>
@@ -55,45 +55,45 @@
 	
 	<!--- biblestudies/create --->
 	<cffunction name="create">
-		<cfset biblestudies = model("Biblestudies").new(params.biblestudies)>
+		<cfset biblestudy = model("Biblestudy").new(params.biblestudies)>
 		
 		<!--- Verify that the biblestudies creates successfully --->
-		<cfif biblestudies.save()>
-			<cfset flashInsert(success="The biblestudies was created successfully.")>
+		<cfif biblestudy.save()>
+			<cfset flashInsert(success="The biblestudy was created successfully.")>
             <cfset redirectTo(action="index")>
 		<!--- Otherwise --->
 		<cfelse>
-			<cfset flashInsert(error="There was an error creating the biblestudies.")>
+			<cfset flashInsert(error="There was an error creating the biblestudy.")>
 			<cfset renderPage(action="new")>
 		</cfif>
 	</cffunction>
 	
 	<!--- biblestudies/update --->
 	<cffunction name="update">
-		<cfset biblestudies = model("Biblestudies").findByKey(params.key)>
+		<cfset biblestudy = model("Biblestudy").findByKey(params.key)>
 		
 		<!--- Verify that the biblestudies updates successfully --->
-		<cfif biblestudies.update(params.biblestudies)>
-			<cfset flashInsert(success="The biblestudies was updated successfully.")>	
+		<cfif biblestudy.update(params.biblestudy)>
+			<cfset flashInsert(success="The biblestudy was updated successfully.")>	
             <cfset redirectTo(action="index")>
 		<!--- Otherwise --->
 		<cfelse>
-			<cfset flashInsert(error="There was an error updating the biblestudies.")>
+			<cfset flashInsert(error="There was an error updating the biblestudy.")>
 			<cfset renderPage(action="edit")>
 		</cfif>
 	</cffunction>
 	
 	<!--- biblestudies/delete/key --->
 	<cffunction name="delete">
-		<cfset biblestudies = model("Biblestudies").findByKey(params.key)>
+		<cfset biblestudy = model("Biblestudy").findByKey(params.key)>
 		
 		<!--- Verify that the biblestudies deletes successfully --->
-		<cfif biblestudies.delete()>
-			<cfset flashInsert(success="The biblestudies was deleted successfully.")>	
+		<cfif biblestudy.delete()>
+			<cfset flashInsert(success="The biblestudy was deleted successfully.")>	
             <cfset redirectTo(action="index")>
 		<!--- Otherwise --->
 		<cfelse>
-			<cfset flashInsert(error="There was an error deleting the biblestudies.")>
+			<cfset flashInsert(error="There was an error deleting the biblestudy.")>
 			<cfset redirectTo(action="index")>
 		</cfif>
 	</cffunction>

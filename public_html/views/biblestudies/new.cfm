@@ -7,7 +7,7 @@
 
 			
 			
-			#errorMessagesFor("biblestudies")#
+			#errorMessagesFor("biblestudy")#
 	
 			#startFormTag(action="create")#
 		

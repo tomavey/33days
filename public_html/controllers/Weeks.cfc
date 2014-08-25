@@ -7,14 +7,14 @@
 	
 	<!--- weeks/index --->
 	<cffunction name="index">
-		<cfset weeks = model("Weeks").findAll()>
+		<cfset weeks = model("Week").findAll()>
 	</cffunction>
 	
 	<!--- weeks/show/key --->
 	<cffunction name="show">
 
 		<!--- Find the record --->
-		<cfset weeks = model("Weeks").findByKey(params.key)>
+		<cfset weeks = model("Week").findByKey(params.key)>
     	
     	<!--- Check if the record exists --->
 	    <cfif NOT IsObject(weeks)>
@@ -28,7 +28,7 @@
 	
 	<!--- weeks/new --->
 	<cffunction name="new">
-		<cfset weeks = model("Weeks").new()>
+		<cfset weeks = model("Week").new()>
 		<cfset renderPage(layout="/layout_admin")>
 	</cffunction>
 	
@@ -36,7 +36,7 @@
 	<cffunction name="edit">
 	
 		<!--- Find the record --->
-		<cfset weeks = model("Weeks").findByKey(params.key)>
+		<cfset weeks = model("Week").findByKey(params.key)>
     	
     	<!--- Check if the record exists --->
 	    <cfif NOT IsObject(weeks)>
@@ -50,7 +50,7 @@
 	
 	<!--- weeks/create --->
 	<cffunction name="create">
-		<cfset weeks = model("Weeks").new(params.weeks)>
+		<cfset weeks = model("Week").new(params.weeks)>
 		
 		<!--- Verify that the weeks creates successfully --->
 		<cfif weeks.save()>
@@ -67,7 +67,7 @@
 	<cffunction name="update">
 
 		<!--- Find the record --->
-		<cfset weeks = model("Weeks").findByKey(params.key)>
+		<cfset weeks = model("Week").findByKey(params.key)>
 		
 		<!--- Verify that the weeks updates successfully --->
 		<cfif weeks.update(params.weeks)>
@@ -82,7 +82,7 @@
 	
 	<!--- weeks/delete/key --->
 	<cffunction name="delete">
-		<cfset weeks = model("Weeks").findByKey(params.key)>
+		<cfset weeks = model("Week").findByKey(params.key)>
 		
 		<!--- Verify that the weeks deletes successfully --->
 		<cfif weeks.delete()>

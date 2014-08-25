@@ -1,7 +1,7 @@
 <cfcomponent extends="Model" output="false">
 
 	<cffunction name="init">
-		<cfset belongsTo("Weeks")>
+		<cfset belongsTo(name="Week", foreignKey="weeksid")>
 	</cffunction>
 
 </cfcomponent>
