@@ -24,12 +24,6 @@
 		<cfset users = model("Users").new()>
 	</cffunction>
 	
-	<!--- users/subscribe --->
-	<cffunction name="subscribe">
-		<cfset users = model("Users").new()>
-		<cfset users.sendstudy = "33days">
-	</cffunction>
-
 	<!--- users/edit/key --->
 	<cffunction name="edit">
 	
@@ -59,21 +53,6 @@
 		</cfif>
 	</cffunction>
 	
-	<!--- users/createsubscription --->
-	<cffunction name="createsubscription">
-		<cfset users = model("Users").new(params.users)>
-		
-		<!--- Verify that the users creates successfully --->
-		<cfif users.save()>
-			<cfset flashInsert(success="Congratulations! You will receive studies by email!")>
-            <cfset returnBack()>
-		<!--- Otherwise --->
-		<cfelse>
-			<cfset flashInsert(error="There was an error creating the users.")>
-			<cfset renderPage(action="subscribe")>
-		</cfif>
-	</cffunction>
-
 	<!--- users/update --->
 	<cffunction name="update">
 		<cfset users = model("Users").findByKey(params.key)>

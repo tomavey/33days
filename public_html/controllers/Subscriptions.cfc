@@ -37,16 +37,32 @@
 	        <cfset redirectTo(action="list")>
 	    </cfif>
 
-	    <cfset subscriptions = model("Users").findAll(where="sendstudy='33days' AND (date(now()) <> date(laststudysentat)) OR laststudysentat IS NULL")>
+	    <cfset whereString = "sendstudy='33days'">
+	    <cfif not isDefined("params.resend")>
+	    	<cfset whereString = whereString & " AND (date(now()) <> date(laststudysentat)) OR laststudysentat IS NULL">
+	    </cfif>
+
+	    <cfset subscriptions = model("Users").findAll(where=whereString)>
+
 	    <cfset allemail = "">
 
 	    <cfloop query="subscriptions">
 	    	<cfset sendEmail(template="email", from="office@cofh.com", to=email, subject="Today's bible study", layout="/layout_naked.cfm")>
 	    	<cfset allemail = allemail & "," & email>
+	    	<cfset setSentDate(email)>
 	    </cfloop>
 
 	    <cfset renderPage(layout="/layout_naked.cfm")>
 			
+	</cffunction>
+
+	<cffunction name="setSentDate">
+	<cfargument name="email" required="true" type="string">
+	<cfargument name="today" default="#now()#">
+		<cfset user = model("Users").findOne(where="email = '#arguments.email#'")>
+		<cfset user.laststudysentat = now()>
+		<cfset user.update()>
+	<cfreturn true>	
 	</cffunction>
 	
 </cfcomponent>
