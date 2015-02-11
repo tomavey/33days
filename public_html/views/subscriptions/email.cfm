@@ -1,7 +1,7 @@
 <div class="container" id="swipeable">
 <cfoutput>
 
-#includePartial("show")#
+#includePartial("../biblestudies/show")#
 
 </cfoutput>
 </div>

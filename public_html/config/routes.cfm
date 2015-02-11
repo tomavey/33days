@@ -19,3 +19,4 @@
 <cfset addRoute(name="prayerguide", pattern="/prayerguide/", controller="pages", action="prayer")>
 <cfset addRoute(name="editintroduction", pattern="/introduction/edit/", controller="pages", action="editintroduction")>
 <cfset addRoute(name="introduction", pattern="/introduction/", controller="pages", action="introduction")>
+<cfset addRoute(name="subscribe", pattern="/subscribe/", controller="Subscriptions", action="new")>

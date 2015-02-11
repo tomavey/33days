@@ -1,6 +1,7 @@
 <cfcomponent extends="Controller" output="false">
 
 	<cffunction name="index">
+		<cfset setReturn()>
 	</cffunction>
 
 	<cffunction name="about">

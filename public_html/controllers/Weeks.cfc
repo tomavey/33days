@@ -2,7 +2,13 @@
 	
 	<cffunction name="init">
 		<cfset filters(through="isOffice", only="index,create,update,delete,new")>
+		<cfset filetrs(through="getWeek", only="show,edit,update")>
 		<cfset usesLayout("/layout_admin")>
+	</cffunction>
+
+	<cffunction name="getweek">
+		<!--- Find the record --->
+		<cfset weeks = model("Week").findByKey(params.key)>
 	</cffunction>
 	
 	<!--- weeks/index --->
@@ -13,9 +19,6 @@
 	<!--- weeks/show/key --->
 	<cffunction name="show">
 
-		<!--- Find the record --->
-		<cfset weeks = model("Week").findByKey(params.key)>
-    	
     	<!--- Check if the record exists --->
 	    <cfif NOT IsObject(weeks)>
 	        <cfset flashInsert(error="Weeks #params.key# was not found")>
@@ -35,9 +38,6 @@
 	<!--- weeks/edit/key --->
 	<cffunction name="edit">
 	
-		<!--- Find the record --->
-		<cfset weeks = model("Week").findByKey(params.key)>
-    	
     	<!--- Check if the record exists --->
 	    <cfif NOT IsObject(weeks)>
 	        <cfset flashInsert(error="Weeks #params.key# was not found")>
@@ -66,9 +66,6 @@
 	<!--- weeks/update --->
 	<cffunction name="update">
 
-		<!--- Find the record --->
-		<cfset weeks = model("Week").findByKey(params.key)>
-		
 		<!--- Verify that the weeks updates successfully --->
 		<cfif weeks.update(params.weeks)>
 			<cfset flashInsert(success="The weeks was updated successfully.")>	
