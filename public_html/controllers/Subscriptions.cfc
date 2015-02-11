@@ -37,20 +37,29 @@
 	        <cfset redirectTo(action="list")>
 	    </cfif>
 
-	    <cfset whereString = "sendstudy='33days'">
-	    <cfif not isDefined("params.resend")>
-	    	<cfset whereString = whereString & " AND (date(now()) <> date(laststudysentat)) OR laststudysentat IS NULL">
-	    </cfif>
-
-	    <cfset subscriptions = model("Users").findAll(where=whereString)>
-
-	    <cfset allemail = "">
-
-	    <cfloop query="subscriptions">
-	    	<cfset sendEmail(template="email", from="office@cofh.com", to=email, subject="Today's bible study", layout="/layout_naked.cfm")>
-	    	<cfset allemail = allemail & "," & email>
+	    <cfif isDefined("params.email")>
+	    	<cfset sendEmail(template="email", from="office@cofh.com", to=params.email, subject="Today's bible study", layout="/layout_naked.cfm")>
 	    	<cfset setSentDate(email)>
-	    </cfloop>
+	    	<cfset allemail = email>
+	    <cfelse>
+
+		    <cfset whereString = "sendstudy='33days'">
+
+		    <cfif not isDefined("params.resend")>
+		    	<cfset whereString = whereString & " AND (date(now()) <> date(laststudysentat)) OR laststudysentat IS NULL">
+		    </cfif>
+
+		    <cfset subscriptions = model("Users").findAll(where=whereString)>
+
+		    <cfset allemail = "">
+
+		    <cfloop query="subscriptions">
+		    	<cfset sendEmail(template="email", from="office@cofh.com", to=email, subject="Today's bible study", layout="/layout_naked.cfm")>
+		    	<cfset allemail = allemail & "," & email>
+		    	<cfset setSentDate(email)>
+		    </cfloop>
+
+	    </cfif>
 
 	    <cfset renderPage(layout="/layout_naked.cfm")>
 			
