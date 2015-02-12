@@ -2,7 +2,7 @@
 	
 	<cffunction name="init">
 		<cfset filters(through="isOffice", only="index,create,update,delete,new")>
-		<cfset filters(through="getWeek", only="show,edit,update")>
+		<cfset filters(through="getWeek", only="show,edit,update,copy")>
 		<cfset usesLayout("/layout_admin")>
 	</cffunction>
 
