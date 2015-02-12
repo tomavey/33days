@@ -1,5 +1,5 @@
 <div class="container">
-<h1>Create a new bible study</h1>
+<h1>Create a new bible study guide</h1>
 
 <cfoutput>#includePartial("showFlash")#</cfoutput>
 

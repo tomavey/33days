@@ -1,5 +1,5 @@
 <div class="container">
-<h1>Create a New weeks</h1>
+<h1>Create a New week:</h1>
 
 <cfoutput>#includePartial("showFlash")#</cfoutput>
 

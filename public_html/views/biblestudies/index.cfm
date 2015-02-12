@@ -21,8 +21,6 @@
 				
 					<cfcol header="Subject" text="#subject#" />
 
-					<cfcol header="Content" text="#left(content,30)#..." />
-				
 					<cfcol header="Last Updated" text="#dateFormat(updatedAt)#" />
 		
 	<cfcol header="" text="#linkTo(text='Show', action='show', key=id)#" />

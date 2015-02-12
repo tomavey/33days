@@ -2,7 +2,7 @@
 
 						#ckeditor()#
 
-						#textField(objectName='weeks', property='week', label='Week')#
+						#select(objectName='weeks', property='week', label='Week', options="1,2,3,4,5", class="input-mini")#
 					
 						#textField(objectName='weeks', property='subject', label='Subject')#
 					
