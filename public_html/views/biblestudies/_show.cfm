@@ -1,5 +1,5 @@
 <cfoutput>
-					<p id="week">Week ###biblestudy.week.week# - <span>#biblestudy.week.subject#</span>; Weekly memory verse = #biblestudy.week.verse# <br/>
+					<p id="week">Week ###week.week# - <span>#week.subject#</span>; Weekly memory verse = #week.verse# <br/>
 					Day: #biblestudy.day#
 					</p>
 
@@ -9,5 +9,5 @@
 
 					<h3>Weekly Assignment</h3>
 
-					<p id="content">#biblestudy.week.content#</p>
+					<p id="content">#week.content#</p>
 </cfoutput>
