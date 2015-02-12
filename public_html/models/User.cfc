@@ -5,6 +5,7 @@
 		<cfset validatesFormatOf(property = "email", type="email")>
 		<cfset beforeSave("setCampaign")>
 		<cfset beforeSave("setUUID")>
+		<cfset beforeValidation("trimProperties")>
 	</cffunction>
 
 	<cffunction name="setUUID">

@@ -8,4 +8,11 @@
 	<cffunction name="setCampaign">
 		<cfset this.campaign = getCampaign()>
 	</cffunction>
+
+	<cffunction name="trimProperties">
+		<cfloop collection=#this.properties()# item="prop">
+			<cfset this[prop] = trim(this[prop])>
+		</cfloop>
+	</cffunction>
+
 </cfcomponent>
