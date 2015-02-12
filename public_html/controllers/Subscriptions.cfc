@@ -58,7 +58,7 @@
 		    <cfset allemail = "">
 
 		    <cfloop query="subscriptions">
-		    	<cfset sendEmail(template="email", from="office@cofh.com", to=email, subject="Today's bible study", layout="/layout_naked.cfm")>
+		    	<cfset sendEmail(template="send", from="office@cofh.com", to=email, subject="Today's bible study", layout="/layout_naked.cfm")>
 		    	<cfset allemail = allemail & "," & email>
 		    	<cfset setSentDate(email)>
 		    </cfloop>
