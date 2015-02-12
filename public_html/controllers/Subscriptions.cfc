@@ -47,7 +47,7 @@
 	    	<cfset allemail = email>
 	    <cfelse>
 
-		    <cfset whereString = "sendstudy='33days'">
+		    <cfset whereString = "campaign='#getCampaign()#'">
 
 		    <cfif not isDefined("params.resend")>
 		    	<cfset whereString = whereString & " AND (date(now()) <> date(laststudysentat)) OR laststudysentat IS NULL">

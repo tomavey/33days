@@ -17,11 +17,9 @@
 				
 					<cfcol header="Last name" text="#lname#" />
 				
-					<cfcol header="Study?" text="#sendstudy#" />
-				
 					<cfcol header="Last Sent" text="#dateformat(laststudysentat)#" />
 
-					<cfcol header="Created At" text="#dateformat(createdAt)#" />
+					<cfcol header="Created" text="#dateformat(createdAt)#" />
 				
 		
 	<cfcol header="" text="#linkTo(text='Show', action='show', key=id)#" />
