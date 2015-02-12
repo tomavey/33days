@@ -25,7 +25,7 @@
 	
 	<!--- pages/index --->
 	<cffunction name="index">
-		<cfset pages = model("Page").findAll()>
+		<cfset pages = model("Page").findAll(where="campaign='#getCampaign()#'")>
 	</cffunction>
 	
 	<!--- pages/show/key --->

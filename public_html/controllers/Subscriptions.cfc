@@ -1,15 +1,19 @@
 <cfcomponent extends="Controller" output="false">
+
+	<cffunction name="init">
+		<cfset filters(through="isOffice", only="index,delete")>
+	</cffunction>
 	
 	
 	<!--- users/subscribe --->
 	<cffunction name="new">
-		<cfset users = model("Users").new()>
+		<cfset users = model("User").new()>
 		<cfset users.sendstudy = "33days">
 	</cffunction>
 
 	<!--- users/create --->
 	<cffunction name="create">
-		<cfset users = model("Users").new(params.users)>
+		<cfset users = model("User").new(params.users)>
 		
 		<!--- Verify that the users creates successfully --->
 		<cfif users.save()>
@@ -49,7 +53,7 @@
 		    	<cfset whereString = whereString & " AND (date(now()) <> date(laststudysentat)) OR laststudysentat IS NULL">
 		    </cfif>
 
-		    <cfset subscriptions = model("Users").findAll(where=whereString)>
+		    <cfset subscriptions = model("User").findAll(where=whereString)>
 
 		    <cfset allemail = "">
 
@@ -68,10 +72,10 @@
 	<cffunction name="setSentDate">
 	<cfargument name="email" required="true" type="string">
 	<cfargument name="today" default="#now()#">
-		<cfset user = model("Users").findOne(where="email = '#arguments.email#'")>
+		<cfset user = model("User").findOne(where="email = '#arguments.email#'")>
 		<cfset user.laststudysentat = now()>
 		<cfset user.update()>
 	<cfreturn true>	
 	</cffunction>
-	
+
 </cfcomponent>

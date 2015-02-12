@@ -2,14 +2,14 @@
 	
 	<!--- users/index --->
 	<cffunction name="index">
-		<cfset users = model("Users").findAll()>
+		<cfset users = model("User").findAll(where="campaign='#getCampaign()#'")>
 	</cffunction>
 	
 	<!--- users/show/key --->
 	<cffunction name="show">
 		
 		<!--- Find the record --->
-    	<cfset users = model("Users").findByKey(params.key)>
+    	<cfset users = model("User").findByKey(params.key)>
     	
     	<!--- Check if the record exists --->
 	    <cfif NOT IsObject(users)>
@@ -21,14 +21,14 @@
 	
 	<!--- users/new --->
 	<cffunction name="new">
-		<cfset users = model("Users").new()>
+		<cfset users = model("User").new()>
 	</cffunction>
 	
 	<!--- users/edit/key --->
 	<cffunction name="edit">
 	
 		<!--- Find the record --->
-    	<cfset users = model("Users").findByKey(params.key)>
+    	<cfset users = model("User").findByKey(params.key)>
     	
     	<!--- Check if the record exists --->
 	    <cfif NOT IsObject(users)>
@@ -40,7 +40,7 @@
 	
 	<!--- users/create --->
 	<cffunction name="create">
-		<cfset users = model("Users").new(params.users)>
+		<cfset users = model("User").new(params.users)>
 		
 		<!--- Verify that the users creates successfully --->
 		<cfif users.save()>
@@ -55,7 +55,7 @@
 	
 	<!--- users/update --->
 	<cffunction name="update">
-		<cfset users = model("Users").findByKey(params.key)>
+		<cfset users = model("User").findByKey(params.key)>
 		
 		<!--- Verify that the users updates successfully --->
 		<cfif users.update(params.users)>
@@ -70,7 +70,7 @@
 	
 	<!--- users/delete/key --->
 	<cffunction name="delete">
-		<cfset users = model("Users").findByKey(params.key)>
+		<cfset users = model("User").findByKey(params.key)>
 		
 		<!--- Verify that the users deletes successfully --->
 		<cfif users.delete()>

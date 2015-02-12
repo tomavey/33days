@@ -13,7 +13,7 @@
 	
 	<!--- weeks/index --->
 	<cffunction name="index">
-		<cfset weeks = model("Week").findAll()>
+		<cfset weeks = model("Week").findAll(where="campaign='#getCampaign()#'")>
 	</cffunction>
 	
 	<!--- weeks/show/key --->
@@ -54,7 +54,7 @@
 		
 		<!--- Verify that the weeks creates successfully --->
 		<cfif weeks.save()>
-			<cfset flashInsert(success="The weeks was created successfully.")>
+			<cfset flashInsert(success="The week was created successfully.")>
             <cfset redirectTo(route="adminweeks")>
 		<!--- Otherwise --->
 		<cfelse>

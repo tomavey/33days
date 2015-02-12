@@ -6,12 +6,12 @@
 	
 	<!--- biblestudies/index --->
 	<cffunction name="index">
-		<cfset biblestudies = model("Biblestudy").findAll(include="Week", order="day")>
+		<cfset biblestudies = model("Biblestudy").findAll(where=" campaign='#getCampaign()#'", include="Week", order="day")>
 		<cfset renderPage(layout="/layout_admin")>
 	</cffunction>
 	
 	<cffunction name="list">
-		<cfset biblestudies = model("Biblestudy").findAll(where="active='yes'", order="week,day", include="Week")>
+		<cfset biblestudies = model("Biblestudy").findAll(where="active='yes' AND campaign='#getCampaign()#'", order="week,day", include="Week")>
 	</cffunction>
 
 	<!--- biblestudies/show/key --->
@@ -21,7 +21,7 @@
 		</cfif>
 		
 		<!--- Find the record --->
-    	<cfset biblestudy = model("Biblestudy").findOne(where="day=#params.key#", include="Week")>
+    	<cfset biblestudy = model("Biblestudy").findOne(where="day=#params.key# AND campaign='#getCampaign()#'", include="Week")>
     	
     	<!--- Check if the record exists --->
 	    <cfif NOT IsObject(biblestudy)>
@@ -55,7 +55,7 @@
 	
 	<!--- biblestudies/create --->
 	<cffunction name="create">
-		<cfset biblestudy = model("Biblestudy").new(params.biblestudies)>
+		<cfset biblestudy = model("Biblestudy").new(params.biblestudy)>
 		
 		<!--- Verify that the biblestudies creates successfully --->
 		<cfif biblestudy.save()>

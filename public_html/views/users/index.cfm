@@ -1,9 +1,9 @@
-<h1>Listing users</h1>
+<h1>Listing subscriptions:</h1>
 
 <cfoutput>#includePartial("showFlash")#</cfoutput>
 
 <cfoutput>
-	<p>#linkTo(text="New users", action="new")#</p>
+	<p>#linkTo(text="New subscription", controller="subscriptions", action="new")#</p>
 </cfoutput>
 
 <div class="table">
@@ -11,7 +11,7 @@
 	
 			
 				
-					<cfcol header="Email" text="#email#" />
+					<cfcol header="Email" text="#mailto(email)#" />
 				
 					<cfcol header="First name" text="#fname#" />
 				
@@ -19,6 +19,8 @@
 				
 					<cfcol header="Study?" text="#sendstudy#" />
 				
+					<cfcol header="Last Sent" text="#dateformat(laststudysentat)#" />
+
 					<cfcol header="Created At" text="#dateformat(createdAt)#" />
 				
 		

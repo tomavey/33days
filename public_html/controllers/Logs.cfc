@@ -2,7 +2,7 @@
 	
 	<!--- logs/index --->
 	<cffunction name="index">
-		<cfset logs = model("Log").findAll(order="id DESC")>
+		<cfset logs = model("Log").findAll(where="campaign='#getCampaign#'", order="id DESC")>
 	</cffunction>
 	
 	<!--- logs/show/key --->
