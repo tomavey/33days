@@ -34,7 +34,7 @@
 		
 		<!--- Find the record --->
     	<cfset biblestudy = model("Biblestudy").findOne(where="day=#params.key# AND campaign='#getCampaign()#'", include="Week")>
-    	
+
     	<!--- Check if the record exists --->
 	    <cfif NOT IsObject(biblestudy)>
 	        <cfset flashInsert(error="Biblestudies #params.key# was not found")>
@@ -72,7 +72,7 @@
 	<cffunction name="setSentDate">
 	<cfargument name="email" required="true" type="string">
 	<cfargument name="today" default="#now()#">
-		<cfset user = model("User").findOne(where="email = '#arguments.email#' AND campaign='#getCampaign#'")>
+		<cfset user = model("User").findOne(where="email = '#arguments.email#' AND campaign='#getCampaign()#'")>
 		<cfset user.laststudysentat = now()>
 		<cfset user.update()>
 	<cfreturn true>	
