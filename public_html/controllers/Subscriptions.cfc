@@ -38,7 +38,7 @@
     	<!--- Check if the record exists --->
 	    <cfif NOT IsObject(biblestudy)>
 	        <cfset flashInsert(error="Biblestudies #params.key# was not found")>
-	        <cfset redirectTo(action="list")>
+	        <cfset redirectTo(controller="users", action="index")>
 	    </cfif>
 
 	    <cfif isDefined("params.email")>
