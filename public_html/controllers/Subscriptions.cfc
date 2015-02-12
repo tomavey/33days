@@ -33,7 +33,7 @@
 		</cfif>
 		
 		<!--- Find the record --->
-    	<cfset biblestudy = model("Biblestudy").findOne(where="day=#params.key# AND campaign='#getCampaign#'", include="Week")>
+    	<cfset biblestudy = model("Biblestudy").findOne(where="day=#params.key# AND campaign='#getCampaign()#'", include="Week")>
     	
     	<!--- Check if the record exists --->
 	    <cfif NOT IsObject(biblestudy)>
