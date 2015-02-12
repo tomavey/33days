@@ -48,6 +48,19 @@
 		
 	</cffunction>
 	
+	<!--- weeks/edit/key --->
+	<cffunction name="copy">
+	
+    	<!--- Check if the record exists --->
+	    <cfif NOT IsObject(weeks)>
+	        <cfset flashInsert(error="Weeks #params.key# was not found")>
+			<cfset redirectTo(route="adminweeks")>
+	    </cfif>
+
+		<cfset renderPage(layout="/layout_admin")>
+		
+	</cffunction>
+	
 	<!--- weeks/create --->
 	<cffunction name="create">
 		<cfset weeks = model("Week").new(params.weeks)>

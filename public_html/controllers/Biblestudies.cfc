@@ -52,6 +52,23 @@
 		<cfset renderPage(layout="/layout_admin")>
 		
 	</cffunction>
+
+		<!--- biblestudies/edit/key --->
+	<cffunction name="copy">
+	
+		<!--- Find the record --->
+    	<cfset biblestudy = model("Biblestudy").findByKey(params.key)>
+    	
+    	<!--- Check if the record exists --->
+	    <cfif NOT IsObject(biblestudy)>
+	        <cfset flashInsert(error="Biblestudies #params.key# was not found")>
+			<cfset redirectTo(action="index")>
+	    </cfif>
+
+		<cfset renderPage(layout="/layout_admin")>
+		
+	</cffunction>
+
 	
 	<!--- biblestudies/create --->
 	<cffunction name="create">

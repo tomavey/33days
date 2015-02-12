@@ -26,6 +26,7 @@
 				
 	<cfcol header="" text="#linkTo(text='Show', route="week", key=id)#" />
 	<cfcol header="" text="#linkTo(text='Edit', route="weekedit", key=id)#" />
+	<cfcol header="" text="#linkTo(text='Copy', action='copy', key=id)#" />
 	<cfcol header="" text="#linkTo(text='Delete', action='delete', key=id, confirm='Are you sure?')#" />
 </cftable>
 
