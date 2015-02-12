@@ -90,7 +90,7 @@
 	</cffunction>
 
 	<cffunction name="confirm">
-		<cfset user=model("User").findOne(where="uuid='#params.key#")>
+		<cfset user=model("User").findOne(where="uuid='#params.key#'")>
 		    	<cfset sendEmail(template="confirm", from="office@cofh.com", to=user.email, subject="Confirm your subscription.", layout="/layout_naked.cfm")>
 		<cfset redirectTo(action="confirmationsent")>    	
 
