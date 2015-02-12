@@ -1,9 +1,8 @@
 <div class="container">
 <h1>Listing Guides</h1>
-
-<cfoutput>#includePartial("showFlash")#</cfoutput>
-
 <cfoutput>
+<p>#getCampaign()#</p>
+#includePartial("showFlash")#
 	<p>
 		#linkTo(text="Add a new guide", route="adminguidesnew")# | 
 		#linkTo(text="List the Weeks", route="adminweeks")# | 

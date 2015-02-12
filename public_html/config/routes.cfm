@@ -20,3 +20,5 @@
 <cfset addRoute(name="editintroduction", pattern="/introduction/edit/", controller="pages", action="editintroduction")>
 <cfset addRoute(name="introduction", pattern="/introduction/", controller="pages", action="introduction")>
 <cfset addRoute(name="subscribe", pattern="/subscribe/", controller="Subscriptions", action="new")>
+<cfset addRoute(name="confirm", pattern="/confirm/[key]", controller="Subscriptions", action="confirm-subscription")>
+

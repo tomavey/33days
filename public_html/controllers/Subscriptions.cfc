@@ -14,14 +14,14 @@
 	<!--- users/create --->
 	<cffunction name="create">
 		<cfset users = model("User").new(params.users)>
-		
+		<cfset users.emailcampaigncheck  = users.email & getcampaign()>		
 		<!--- Verify that the users creates successfully --->
 		<cfif users.save()>
 			<cfset flashInsert(success="Congratulations! You will receive studies by email!")>
-            <cfset returnBack()>
+			<cfset redirectTo(action="confirm", key=users.uuid)>
 		<!--- Otherwise --->
 		<cfelse>
-			<cfset flashInsert(error="There was an error creating the users.")>
+			<cfset flashInsert(error="There was an error creating the subscription.")>
 			<cfset renderPage(action="new")>
 		</cfif>
 	</cffunction>
@@ -76,6 +76,21 @@
 		<cfset user.laststudysentat = now()>
 		<cfset user.update()>
 	<cfreturn true>	
+	</cffunction>
+
+	<cffunction name="confirmSubscription">
+		<cfset user = model("User").findOne(where="uuid='#params.key#'")>
+		<cfif isObject(user)>
+			<cfset user.confirmed = now()>
+			<cfset user.update()>
+			<cfset message = "#user.email# is Subscribed!">
+		<cfelse>	 	
+			<cfset message = "Oops!  Something went wrong.">
+		</cfif>		
+	</cffunction>
+
+	<cffunction name="confirm">
+
 	</cffunction>
 
 </cfcomponent>

@@ -2,7 +2,7 @@
 
 	<cffunction name="init">
 		<cfset usesLayout("/layout_admin")>
-		<cfset filters(through="getpage", only="show,edit,update")>
+		<cfset filters(through="getpage", only="show,edit,update,copy")>
 	</cffunction>
 
 	<cffunction name="getPage">
@@ -53,6 +53,13 @@
 		</cfif>
 	</cffunction>
 	
+	<!--- pages/copy --->
+	<cffunction name="copy">
+		<cfif isDefined("params.shortlink")>
+			<cfset page.shortlink = params.shortlink>
+		</cfif>
+	</cffunction>
+
 	<!--- pages/edit/key --->
 	<cffunction name="edit">
 	

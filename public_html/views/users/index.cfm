@@ -19,6 +19,8 @@
 				
 					<cfcol header="Last Sent" text="#dateformat(laststudysentat)#" />
 
+					<cfcol header="Confirmed" text="#dateformat(confirmed)#" />
+
 					<cfcol header="Created" text="#dateformat(createdAt)#" />
 				
 		

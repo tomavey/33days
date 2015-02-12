@@ -7,7 +7,7 @@
 			</span>
 		</a>
 
-		<h1>#linkTo(text="33Days in the Grove", route="home", id="homelink")#</h1>
+		<h1>#linkTo(text="Victorious Life in Jesus", route="home", id="homelink")#</h1>
 
 <!---Test git--->
 </cfoutput>

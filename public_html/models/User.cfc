@@ -1,9 +1,14 @@
 <cfcomponent extends="Model" output="false">
 
 	<cffunction name="init">
-		<cfset validatesUniquenessOf(property = "email", message = "This email address has already been used.")>
+		<cfset validatesUniquenessOf(property = "emailcampaigncheck", message = "This email address has already been subscribed.")>
 		<cfset validatesFormatOf(property = "email", type="email")>
 		<cfset beforeSave("setCampaign")>
+		<cfset beforeSave("setUUID")>
+	</cffunction>
+
+	<cffunction name="setUUID">
+		<cfset this.UUID = createUUID()>	
 	</cffunction>
 
 </cfcomponent>

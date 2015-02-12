@@ -2,7 +2,10 @@
 
 <cffunction name="getCampaign">
 	<cfset var loc = structNew()>
-	<cfif isDefined("params.campaign")>
+	<cfif isDefined("session.33days.campaign") and len(session.33days.campaign)>
+		<cfset loc.return = session.33days.campaign>
+	<cfelseif isDefined("params.campaign")>
+		<cfset session.33days.campaign = params.campaign>	
 		<cfset loc.return = params.campaign>
 	<cfelse>
 		<cfset loc.return = application.wheels.campaign>
