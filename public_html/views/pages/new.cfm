@@ -11,7 +11,17 @@
 	
 			#startFormTag(action="create")#
 
-			#textField(objectName='page', property='shortlink', label='Shortlink: (ie:www.33days.us/pages/????')#
+			<cfif NOT isDefined("page.shortlink")>
+
+				#textField(objectName='page', property='shortlink', label='Shortlink: (ie:www.33days.us/pages/????')#
+
+			<cfelse>
+
+				#hiddenField(objectName='page', property='shortlink', label='Shortlink: (ie:www.33days.us/pages/????')#
+
+				<p>Shortlink: #page.shortlink#</p>
+
+			</cfif>
 		
 			#includePartial("form")#
 				

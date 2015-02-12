@@ -14,7 +14,11 @@
     	<cfelseif len(params.key)>	
 
 			<!--- Find the record by shortlink--->
-    		<cfset page = model("Page").findOne(where="shortlink='#params.key#'")>
+    		<cfset page = model("Page").findOne(where="shortlink='#params.key#' AND campaign='#getCampaign()#'")>
+
+    		<cfif not isObject(page)>
+    			<cfset redirectTo(action='new', params="shortlink=#params.key#")>
+    		</cfif>
 
     	<cfelse>
 
@@ -44,6 +48,9 @@
 	<!--- pages/new --->
 	<cffunction name="new">
 		<cfset page = model("Page").new()>
+		<cfif isDefined("params.shortlink")>
+			<cfset page.shortlink = params.shortlink>
+		</cfif>
 	</cffunction>
 	
 	<!--- pages/edit/key --->
