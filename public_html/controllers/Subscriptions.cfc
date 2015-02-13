@@ -49,18 +49,21 @@
 
 		    <cfset whereString = "campaign='#getCampaign()#'">
 
+<!---
 		    <cfif not isDefined("params.resend")>
 		    	<cfset whereString = whereString & " AND (date(now()) <> date(laststudysentat)) OR laststudysentat IS NULL">
 		    </cfif>
-
+--->
 		    <cfset subscriptions = model("User").findAll(where=whereString)>
 
 		    <cfset allemail = "">
 
 		    <cfloop query="subscriptions">
-		    	<cfset sendEmail(template="send", from="office@cofh.com", to=email, subject="Today's bible study", layout="/layout_naked.cfm")>
-		    	<cfset allemail = allemail & "," & email>
-		    	<cfset setSentDate(email)>
+		    	<cfif sendToThisPerson(laststudysentat) OR isDefined("params.resend")>
+			    	<cfset sendEmail(template="send", from="office@cofh.com", to=email, subject="Today's bible study", layout="/layout_naked.cfm")>
+			    	<cfset allemail = allemail & "," & email>
+			    	<cfset setSentDate(email)>
+		    	</cfif>
 		    </cfloop>
 
 	    </cfif>
@@ -96,6 +99,21 @@
 
 	</cffunction>
 
+	<cffunction name="sendToThisPerson">
+	<cfargument name="lastSendAt" required="true">
+	<cfset var loc=structNew()>
+	<cfset loc.todayAsString = dateformat(now(),"yyyy-mm-dd")>
+	<cfset loc.return = true>
+	<cfif isDate(arguments.lastSendAt)>
+		<cfif dateCompare(lastSendAt,loc.todayasstring) EQ 0>
+			<cfset loc.return=false>
+		</cfif>		
+	</cfif>	
+	<cfif isDefined("params.resend")>
+			<cfset loc.return=false>
+	</cfif>
+	<cfreturn loc.return>
+	</cffunction>
 
 
 </cfcomponent>
