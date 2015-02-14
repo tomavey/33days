@@ -11,7 +11,9 @@
 	</cffunction>
 	
 	<cffunction name="list">
-		<cfset biblestudies = model("Biblestudy").findAll(where="active='yes' AND campaign='#getCampaign()#'", order="week,day", include="Week")>
+
+		<cfset biblestudies = model("Biblestudy").findAll(where="active='yes' AND campaign='#getCampaign()#'", order="weeksid,day")>
+
 	</cffunction>
 
 	<!--- biblestudies/show/key --->

@@ -8,7 +8,7 @@
 
 	<cffunction name="getweek">
 		<!--- Find the record --->
-		<cfset weeks = model("Week").findByKey(params.key)>
+		<cfset weeks = model("Week").findOne(where="week=#params.key# AND campaign='#getCampaign()#'")>
 	</cffunction>
 	
 	<!--- weeks/index --->
