@@ -1,3 +1,5 @@
+<div class="container">
+
 <h1>Listing subscriptions:</h1>
 
 <cfoutput>#includePartial("showFlash")#</cfoutput>
@@ -29,4 +31,5 @@
 	<cfcol header="" text="#linkTo(text='Delete', action='delete', key=id, confirm='Are you sure?')#" />
 	<cfcol header="" text="#linkTo(text='Send', controller="subscriptions", action='send', params="email=#email#", confirm='Are you sure?')#" />
 </cftable>
+</div>
 </div>
