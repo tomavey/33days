@@ -1,6 +1,7 @@
 <cfcomponent extends="Controller" output="false">
 
 	<cffunction name="init">
+		<cfset filters(through="isOffice", only="index,create,update,delete,new")>
 		<cfset usesLayout("/layout_admin")>
 	</cffunction>
 	

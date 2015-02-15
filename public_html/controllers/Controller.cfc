@@ -108,6 +108,14 @@
 
 <cffunction name="isOffice">
 	<cftry>
+		<cfif isDefined("params.close")>
+			<cfset session.33days.auth = "">
+			<cfset renderText("You are logged out!")>	
+		</cfif>
+	<cfcatch></cfcatch>
+	</cftry>	
+
+	<cftry>
 		<cfif session.33days.auth is "office">
 			<cfreturn true>
 		</cfif>
