@@ -6,3 +6,23 @@
 	<cfset loc.week = model("Week").findOne(where="week=#arguments.weekNo# AND campaign = '#getCampaign()#'")>
 <cfreturn loc.week>	
 </cffunction>
+
+<cffunction name="getMainImage">
+<cfset var loc = structNew()>
+	<cfset campaign = model("campaign").findOne(where="active='yes'")>
+<cfreturn campaign.mainimage>	
+</cffunction>
+
+<cffunction name="getMainTitle">
+<cfset var loc = structNew()>
+	<cfset campaign = model("campaign").findOne(where="active='yes'")>
+<cfreturn campaign.maintitle>	
+</cffunction>
+
+<cffunction name="getNavBarColor">
+<cfset var loc = structNew()>
+	<cfset campaign = model("campaign").findOne(where="active='yes'")>
+<cfreturn campaign.navbarcolor>	
+</cffunction>
+
+<cfset navbarcolor = "###getNavBarColor()#">

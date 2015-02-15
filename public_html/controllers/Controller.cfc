@@ -5,10 +5,11 @@
 --->
 <cfcomponent extends="Wheels">
 
+<!---
 	<cffunction name="init">
 		<cfset filters(through="logpage")>
 	</cffunction>
-
+--->
 	<cffunction name="logpage">
 	<cfset var loc = structnew()>
 
@@ -85,7 +86,7 @@
 </cffunction>
 
 <cffunction name="getThisDay">
-<cfargument name="startdate" default='#application.wheels.startdate#'>
+<cfargument name="startdate" default='#getStartDate()#'>
 <cfargument name="thisdate" default="#now()#">
 <cfset var loc=structNew()>
 		<cfset loc = arguments>
@@ -96,6 +97,13 @@
 			<cfset loc.return = loc.thisday>
 		</cfif>	
 	<cfreturn val(loc.return)>
+</cffunction>
+
+<cffunction name="getStartDate">
+<cfset var loc=structNew()>
+	<cfset loc.startdate = model("Campaign").findOne(where="active='yes'").startdate>
+	
+<cfreturn loc.startdate>
 </cffunction>
 
 <cffunction name="isOffice">

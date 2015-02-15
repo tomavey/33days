@@ -17,6 +17,7 @@
     <li>#linkTo(text="Edit Prayer Guide", route="editprayerguide")#</li>
     <li>#linkTo(text="Edit Introduction", route="editintroduction")#</li>
     <li>#linkTo(text="Subscriptions", controller="users", action="index")#</li>
+    <li>#linkTo(text="Campaigns", controller="campaigns", action="index")#</li>
     </ul>
     </div>
     </div>

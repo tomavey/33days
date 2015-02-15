@@ -8,7 +8,8 @@
 		<cfset session.33days.campaign = params.campaign>	
 		<cfset loc.return = params.campaign>
 	<cfelse>
-		<cfset loc.return = application.wheels.campaign>
+		<cfset campaign = model("campaign").findOne(where="active='yes'")>
+		<cfset loc.return = campaign.campaign>
 	</cfif>
 	<cfreturn loc.return>		
 </cffunction>

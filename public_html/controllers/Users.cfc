@@ -1,4 +1,8 @@
 <cfcomponent extends="Controller" output="false">
+
+	<cffunction name="init">
+		<cfset usesLayout("/layout_admin")>
+	</cffunction>
 	
 	<!--- users/index --->
 	<cffunction name="index">

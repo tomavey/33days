@@ -10,16 +10,18 @@
 		<cfif application.wheels.environment NEQ "design">
 			#javaScriptIncludeTag("jquery.mobile-1.3.1.min,jquery.touchSwipe.min")#
 		</cfif>
+
+
 	</cfoutput>
+
 
 </head>
 
 <body>
 <cfoutput>	
+<div data-role="page" data-theme="a" id="welcome" >
 
-<div data-role="page" data-theme="a" id="welcome">
-
-	<div data-role="header">
+	<div data-role="header" style="background-image: linear-gradient( #navbarcolor#, #navbarcolor#)">
 		#includePartial("/header")#
 
 		<div data-role="navbar">
@@ -37,7 +39,7 @@
 	 	#includeContent()#
  	</div>
 
-	<div data-role="footer">
+	<div data-role="footer" style="background-image: linear-gradient( #navbarcolor#, #navbarcolor#)">
 		#includePartial("/footer")#
 	</div><!-- /footer -->
 
