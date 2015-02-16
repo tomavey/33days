@@ -22,7 +22,7 @@
 
 					<cfcol header="Last Updated" text="#dateFormat(updatedAt)#" />
 		
-	<cfcol header="" text="#linkTo(text='Show', action='show', key=id)#" />
+	<cfcol header="" text="#linkTo(text='Show', action='show', key=day)#" />
 	<cfcol header="" text="#linkTo(text='Edit', action='edit', key=id)#" />
 	<cfcol header="" text="#linkTo(text='Copy', action='copy', key=id)#" />
 	<cfcol header="" text="#linkTo(text='Delete', action='delete', key=id, confirm='Are you sure?')#" />

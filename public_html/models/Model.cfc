@@ -6,7 +6,9 @@
 
 <cfcomponent extends="Wheels">
 	<cffunction name="setCampaign">
-		<cfset this.campaign = getCampaign()>
+		<cfif not isDefined("this.campaign")>
+			<cfset this.campaign = getCampaign()>
+		</cfif>	
 	</cffunction>
 
 	<cffunction name="trimProperties">

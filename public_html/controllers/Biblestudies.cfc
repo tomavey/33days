@@ -62,6 +62,7 @@
 	
 		<!--- Find the record --->
     	<cfset biblestudy = model("Biblestudy").findByKey(params.key)>
+    	<cfset campaigns = model("Campaign").findAll()>
     	
     	<!--- Check if the record exists --->
 	    <cfif NOT IsObject(biblestudy)>
@@ -76,6 +77,7 @@
 	
 	<!--- biblestudies/create --->
 	<cffunction name="create">
+
 		<cfset biblestudy = model("Biblestudy").new(params.biblestudy)>
 		
 		<!--- Verify that the biblestudies creates successfully --->
