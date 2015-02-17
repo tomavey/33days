@@ -11,6 +11,8 @@
 					<p id="content">#biblestudy.content#</p>
 
 					<h3>Weekly Assignment</h3>
-
+					<cftry>	
 					<p id="content">#week.content#</p>
+					<cfcatch>Weekly study not uploaded yet.</cfcatch>
+					</cftry>
 </cfoutput>
