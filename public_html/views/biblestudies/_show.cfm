@@ -1,5 +1,8 @@
 <cfoutput>
+					<cftry>
 					<p id="week">Week ###week.week# - <span>#week.subject#</span>; Weekly memory verse = #week.verse# <br/>
+					<cfcatch>Weekly study not uploaded yet.</cfcatch>
+					</cftry>
 					Day: #biblestudy.day#
 					</p>
 
