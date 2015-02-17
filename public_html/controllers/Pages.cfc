@@ -15,7 +15,7 @@
     	<cfelseif len(params.key)>	
 
 			<!--- Find the record by shortlink--->
-    		<cfset page = model("Page").findOne(where="shortlink='#params.key#' AND campaign='#getCampaign()#'")>
+    		<cfset page = model("Page").findOne(where="shortlink='#params.key#' AND campaignid='#getCampaignId()#'")>
 
     		<cfif not isObject(page)>
     			<cfset redirectTo(action='new', params="shortlink=#params.key#")>
@@ -30,7 +30,7 @@
 	
 	<!--- pages/index --->
 	<cffunction name="index">
-		<cfset pages = model("Page").findAll(where="campaign='#getCampaign()#'")>
+		<cfset pages = model("Page").findAll(where="campaignid='#getCampaignId()#'")>
 	</cffunction>
 	
 	<!--- pages/show/key --->
@@ -56,6 +56,7 @@
 	
 	<!--- pages/copy --->
 	<cffunction name="copy">
+    	<cfset campaigns = model("Campaign").findAll()>
 		<cfif isDefined("params.shortlink")>
 			<cfset page.shortlink = params.shortlink>
 		</cfif>

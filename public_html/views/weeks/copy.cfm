@@ -10,7 +10,7 @@
 	
 			#startFormTag(action="create", key=params.key)#
 
-			#textField(objectName="weeks", property="campaign", text="Campaign:")#
+			#select(objectName="biblestudy", property="campaignId", text="Campaign:", options=campaigns, valuefield="id")#
 
 			#includePartial("form")#
 

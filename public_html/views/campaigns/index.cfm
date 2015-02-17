@@ -2,7 +2,7 @@
 <h1>Listing campaigns</h1>
 
 <cfoutput>
-<p>Active campaign = #getCampaign()#
+<p>Active campaign = #getCampaignName()#
 
 #includePartial("showFlash")#
 

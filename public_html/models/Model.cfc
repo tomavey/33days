@@ -6,8 +6,8 @@
 
 <cfcomponent extends="Wheels">
 	<cffunction name="setCampaign">
-		<cfif not isDefined("this.campaign")>
-			<cfset this.campaign = getCampaign()>
+		<cfif not isDefined("this.campaignId")>
+			<cfset this.campaignId = getCampaignId()>
 		</cfif>	
 	</cffunction>
 

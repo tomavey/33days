@@ -2,17 +2,22 @@
 
 	<cffunction name="init">
 		<cfset filters(through="isOffice", only="index,create,update,delete,new")>
+		<cfset filters(through="getBibleStudy", only="edit,update,copy,delete")>
+	</cffunction>
+
+	<cffunction name="getBibleStudy">
+    	<cfset biblestudy = model("Biblestudy").findByKey(params.key)>
 	</cffunction>
 	
 	<!--- biblestudies/index --->
 	<cffunction name="index">
-		<cfset biblestudies = model("Biblestudy").findAll(where=" campaign='#getCampaign()#'", include="Week", order="day")>
+		<cfset biblestudies = model("Biblestudy").findAll(where=" campaignid='#getCampaignId()#'", include="Week", order="day")>
 		<cfset renderPage(layout="/layout_admin")>
 	</cffunction>
 	
 	<cffunction name="list">
 
-		<cfset biblestudies = model("Biblestudy").findAll(where="active='yes' AND campaign='#getCampaign()#'", order="weeksid,day")>
+		<cfset biblestudies = model("Biblestudy").findAll(where="active='yes' AND campaignid='#getCampaignId()#'", order="weeksid,day")>
 
 	</cffunction>
 
@@ -23,9 +28,9 @@
 		</cfif>
 		
 		<!--- Find the record --->
-    	<cfset biblestudy = model("Biblestudy").findOne(where="day=#params.key# AND campaign='#getCampaign()#'")>
+    	<cfset biblestudy = model("Biblestudy").findOne(where="day=#params.key# AND campaignId='#getCampaignId()#'")>
 
-    	<cfset week = model("Week").findOne(where="week=#biblestudy.weeksid# AND campaign='#getcampaign()#'")>
+    	<cfset week = model("Week").findOne(where="week=#biblestudy.weeksid# AND campaignid='#getcampaignId()#'")>
 
     	<!--- Check if the record exists --->
 	    <cfif NOT IsObject(biblestudy)>
@@ -44,8 +49,6 @@
 	<!--- biblestudies/edit/key --->
 	<cffunction name="edit">
 	
-		<!--- Find the record --->
-    	<cfset biblestudy = model("Biblestudy").findByKey(params.key)>
     	
     	<!--- Check if the record exists --->
 	    <cfif NOT IsObject(biblestudy)>
@@ -60,8 +63,6 @@
 		<!--- biblestudies/edit/key --->
 	<cffunction name="copy">
 	
-		<!--- Find the record --->
-    	<cfset biblestudy = model("Biblestudy").findByKey(params.key)>
     	<cfset campaigns = model("Campaign").findAll()>
     	
     	<!--- Check if the record exists --->
@@ -93,7 +94,6 @@
 	
 	<!--- biblestudies/update --->
 	<cffunction name="update">
-		<cfset biblestudy = model("Biblestudy").findByKey(params.key)>
 		
 		<!--- Verify that the biblestudies updates successfully --->
 		<cfif biblestudy.update(params.biblestudy)>
@@ -108,7 +108,6 @@
 	
 	<!--- biblestudies/delete/key --->
 	<cffunction name="delete">
-		<cfset biblestudy = model("Biblestudy").findByKey(params.key)>
 		
 		<!--- Verify that the biblestudies deletes successfully --->
 		<cfif biblestudy.delete()>

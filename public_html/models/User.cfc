@@ -1,6 +1,7 @@
 <cfcomponent extends="Model" output="false">
 
 	<cffunction name="init">
+		<cfset belongsTo(name="Campaign", foreignKey="campaignid")>
 		<cfset validatesUniquenessOf(property = "emailcampaigncheck", message = "This email address has already been subscribed.")>
 		<cfset validatesFormatOf(property = "email", type="email")>
 		<cfset beforeSave("setCampaign")>

@@ -8,12 +8,12 @@
 
 	<cffunction name="getweek">
 		<!--- Find the record --->
-		<cfset weeks = model("Week").findOne(where="week=#params.key# AND campaign='#getCampaign()#'")>
+		<cfset weeks = model("Week").findOne(where="week=#params.key# AND campaignId='#getCampaignId()#'")>
 	</cffunction>
 	
 	<!--- weeks/index --->
 	<cffunction name="index">
-		<cfset weeks = model("Week").findAll(where="campaign='#getCampaign()#'")>
+		<cfset weeks = model("Week").findAll(where="campaignId='#getCampaignId()#'")>
 	</cffunction>
 	
 	<!--- weeks/show/key --->
@@ -50,6 +50,8 @@
 	
 	<!--- weeks/edit/key --->
 	<cffunction name="copy">
+
+    	<cfset campaigns = model("Campaign").findAll()>
 	
     	<!--- Check if the record exists --->
 	    <cfif NOT IsObject(weeks)>

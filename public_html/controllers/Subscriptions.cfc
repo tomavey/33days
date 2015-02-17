@@ -14,7 +14,7 @@
 	<!--- users/create --->
 	<cffunction name="create">
 		<cfset users = model("User").new(params)>
-		<cfset users.emailcampaigncheck  = users.email & getcampaign()>		
+		<cfset users.emailcampaigncheck  = users.email & getcampaignId()>		
 		<!--- Verify that the users creates successfully --->
 		<cfif users.save()>
 			<cfset flashInsert(success="Congratulations! You will receive studies by email!")>
@@ -33,9 +33,9 @@
 		</cfif>
 		
 		<!--- Find the record --->
-    	<cfset biblestudy = model("Biblestudy").findOne(where="day=#params.key# AND campaign='#getCampaign()#'", include="Week")>
+    	<cfset biblestudy = model("Biblestudy").findOne(where="day=#params.key# AND campaignid='#getCampaignId()#'", include="Week")>
 
-    	<cfset week = model("Week").findOne(where="week=#biblestudy.weeksid# AND campaign='#getcampaign()#'")>
+    	<cfset week = model("Week").findOne(where="week=#biblestudy.weeksid# AND campaignid='#getcampaignId()#'")>
 
     	<!--- Check if the record exists --->
 	    <cfif NOT IsObject(biblestudy)>
@@ -49,7 +49,7 @@
 	    	<cfset allemail = email>
 	    <cfelse>
 
-		    <cfset whereString = "campaign='#getCampaign()#'">
+		    <cfset whereString = "campaignId='#getCampaignId()#'">
 
 <!---
 		    <cfif not isDefined("params.resend")>
@@ -77,7 +77,7 @@
 	<cffunction name="setSentDate">
 	<cfargument name="email" required="true" type="string">
 	<cfargument name="today" default="#now()#">
-		<cfset user = model("User").findOne(where="email = '#arguments.email#' AND campaign='#getCampaign()#'")>
+		<cfset user = model("User").findOne(where="email = '#arguments.email#' AND campaignId='#getCampaignId()#'")>
 		<cfset user.laststudysentat = now()>
 		<cfset user.update()>
 	<cfreturn true>	

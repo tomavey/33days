@@ -7,7 +7,7 @@
 	
 	<!--- users/index --->
 	<cffunction name="index">
-		<cfset users = model("User").findAll(where="campaign='#getCampaign()#'")>
+		<cfset users = model("User").findAll(where="campaignid='#getCampaignId()#'")>
 	</cffunction>
 	
 	<!--- users/show/key --->

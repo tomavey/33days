@@ -1,7 +1,7 @@
 <div class="container">
 <h1>Listing Guides</h1>
 <cfoutput>
-<p>#getCampaign()#</p>
+<p>#getCampaignName()#</p>
 #includePartial("showFlash")#
 	<p>
 		#linkTo(text="Add a new guide", route="adminguidesnew")# | 

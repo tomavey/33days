@@ -3,7 +3,7 @@
 <cffunction name="getWeek">
 <cfargument name='weekNo' required="true" type="numeric">
 <cfset var loc=structNew()>
-	<cfset loc.week = model("Week").findOne(where="week=#arguments.weekNo# AND campaign = '#getCampaign()#'")>
+	<cfset loc.week = model("Week").findOne(where="week=#arguments.weekNo# AND campaignId = '#getCampaignId()#'")>
 <cfreturn loc.week>	
 </cffunction>
 
@@ -26,3 +26,10 @@
 </cffunction>
 
 <cfset navbarcolor = "###getNavBarColor()#">
+
+<cffunction name="getCampaignName">
+	<cfset var loc = structNew()>
+		<cfset campaign = model("campaign").findOne(where="active='yes'")>
+		<cfset loc.return = campaign.name>
+	<cfreturn loc.return>		
+</cffunction>

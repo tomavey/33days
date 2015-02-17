@@ -2,6 +2,7 @@
 
 	<cffunction name="init">
 		<cfset belongsTo(name="Week", foreignKey="weeksid")>
+		<cfset belongsTo(name="Campaign", foreignKey="campaignid")>
 		<cfset beforeSave("setCampaign")>
 	</cffunction>
 
