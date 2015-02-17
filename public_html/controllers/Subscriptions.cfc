@@ -13,7 +13,7 @@
 
 	<!--- users/create --->
 	<cffunction name="create">
-		<cfset users = model("User").new(params.users)>
+		<cfset users = model("User").new(params)>
 		<cfset users.emailcampaigncheck  = users.email & getcampaign()>		
 		<!--- Verify that the users creates successfully --->
 		<cfif users.save()>

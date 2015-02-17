@@ -1,3 +1,4 @@
+<div data-role="popup">
 <h1>Send studies to me...</h1>
 
 <cfoutput>#includePartial("../users/showFlash")#</cfoutput>
@@ -25,3 +26,4 @@
 			
 		
 </cfoutput>
+</div>
