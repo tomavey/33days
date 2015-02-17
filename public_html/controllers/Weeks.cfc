@@ -32,6 +32,9 @@
 	<!--- weeks/new --->
 	<cffunction name="new">
 		<cfset weeks = model("Week").new()>
+		<cfif isDefined("params.week")>
+			<cfset weeks.week = params.week>
+		</cfif>
 		<cfset renderPage(layout="/layout_admin")>
 	</cffunction>
 	
