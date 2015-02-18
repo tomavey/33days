@@ -4,7 +4,9 @@
 					<h2>#linkto(text="Week ###thisweek.week# - #thisweek.subject#", route="week", key=thisweek.week)#</h2>
 				<cfcatch>
 					<h2>Weekly study not entered yet. </h2>
-					#linkto(text="Create week ###weeksid# study", route="adminweeksnew", params="week=#weeksid#")#
+					<cfif isOffice()>
+					#linkto(text="Create week ###weeksid# study", route="adminweeksnew", params="week=#weeksid#", data_ajax="false")#
+					</cfif>
 				</cfcatch>
 				</cftry>
 			<cfoutput>

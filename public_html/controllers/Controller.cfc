@@ -110,7 +110,7 @@
 	<cftry>
 		<cfif isDefined("params.close")>
 			<cfset session.33days.auth = "">
-			<cfset renderText("You are logged out!")>	
+			<cfreturn false>
 		</cfif>
 	<cfcatch></cfcatch>
 	</cftry>	
@@ -126,7 +126,7 @@
 		<cfset session.33days.auth = "office">
 		<cfreturn true>
 	<cfelse>
-		<cfset renderText("You do not have permission to view this page")>	
+		<cfreturn true>	
 	</cfif>	
 </cffunction>
 
