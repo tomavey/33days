@@ -7,6 +7,12 @@
 
 	<cfset set(dataSourceName="33days")>
 
+	<cfif cgi.http_host is "33days:8888">
+		<cfset set(URLRewriting="Partial")>
+	<cfelse>	
+		<cfset set(URLRewriting="On")>
+		<cfset set(reloadPassword="charis")>
+	</cfif>
 <!---
 	If you leave this setting commented out, Wheels will try to determine the URL rewrite capabilities automatically.
 	The URLRewriting setting can bet set to "On", "Partial" or "Off".
@@ -15,7 +21,6 @@
 	<cfset set(URLRewriting="Partial")>
 --->
 
-	<cfset set(URLRewriting="On")>
 
 	<!---Defaults for form helpers--->
 	<cfset set(functionName="textField", labelPlacement="before", prependToLabel="<p>", append="</p>")>	
