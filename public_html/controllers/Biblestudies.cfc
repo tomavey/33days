@@ -30,12 +30,12 @@
 		<!--- Find the record --->
     	<cfset biblestudy = model("Biblestudy").findOne(where="day=#params.key# AND campaignId='#getCampaignId()#'")>
 
-    	<cfset week = model("Week").findOne(where="week=#biblestudy.weeksid# AND campaignid='#getcampaignId()#'")>
-
     	<!--- Check if the record exists --->
 	    <cfif NOT IsObject(biblestudy)>
 	        <cfset flashInsert(error="Biblestudies #params.key# was not found")>
 	        <cfset redirectTo(action="list")>
+	    <cfelse>    
+	    	<cfset week = model("Week").findOne(where="week=#biblestudy.weeksid# AND campaignid='#getcampaignId()#'")>
 	    </cfif>
 			
 	</cffunction>
