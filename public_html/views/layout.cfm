@@ -8,12 +8,11 @@
 		#styleSheetLinkTag("jquery.mobile-1.3.1,vision2020mobile,style")#    
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 		<cfif application.wheels.environment NEQ "design">
-			#javaScriptIncludeTag("jquery.mobile-1.3.1.min,jquery.touchSwipe.min")#
+			#javaScriptIncludeTag("jquery.mobile-1.3.1.min,jquery.touchSwipe.min,script")#
 		</cfif>
 
 
 	</cfoutput>
-
 
 </head>
 
