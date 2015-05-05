@@ -3,6 +3,7 @@
 	<!--- logs/index --->
 	<cffunction name="index">
 		<cfset logs = model("Log").findAll(where="campaignid='#getCampaignId()#'", order="id DESC")>
+		<cfset usesLayout("/layout_admin")>
 	</cffunction>
 	
 	<!--- logs/show/key --->

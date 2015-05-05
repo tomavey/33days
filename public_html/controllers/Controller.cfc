@@ -5,12 +5,12 @@
 --->
 <cfcomponent extends="Wheels">
 
-<!---
+
 	<cffunction name="init">
 		<cfset filters(through="logpage")>
 	</cffunction>
---->
-	<cffunction name="logpage">
+
+    <cffunction name="logpage">
 	<cfset var loc = structnew()>
 
 		<cfif isStruct(params)>
